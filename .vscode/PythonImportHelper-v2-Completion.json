@@ -1,0 +1,91 @@
+[
+    {
+        "label": "ttk",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "button_click",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def button_click(value):\n    current=input_field.get()\n    input_field.delete(0,tk.END)\n    input_field.insert(0,current+value)\ndef clear_field():\n    input_field.delete(0,tk.END)\ndef calculate_result():\n    try:\n        result=eval(input_field.get())\n        input_field.delete(0,tk.END)",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "clear_field",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def clear_field():\n    input_field.delete(0,tk.END)\ndef calculate_result():\n    try:\n        result=eval(input_field.get())\n        input_field.delete(0,tk.END)\n        input_filed.insert(0,str(result))\n    except:\n        input_field.delete(0,tk.END)\n        input_field.insert(0,\"Error\")",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_result",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_result():\n    try:\n        result=eval(input_field.get())\n        input_field.delete(0,tk.END)\n        input_filed.insert(0,str(result))\n    except:\n        input_field.delete(0,tk.END)\n        input_field.insert(0,\"Error\")\ndef calculate_square_root():\n    try:",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_square_root",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_square_root():\n    try:\n        result=math.sqrt(float(input_field.get()))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_log_base_10():\n    try:",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_log_base_10",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_log_base_10():\n    try:\n        result = math.log10(float(input_field.get()))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_sine():\n    try:",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_sine",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_sine():\n    try:\n        result = math.sin(math.radians(float(input_field.get())))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_cosine():\n    try:",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_cosine",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_cosine():\n    try:\n        result = math.cos(math.radians(float(input_field.get())))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_tangent():\n    try:",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_tangent",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_tangent():\n    try:\n        result = math.tan(math.radians(float(input_field.get())))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\n        #create the main window\nroot=tk.TK()",
+        "detail": "calculator",
+        "documentation": {}
+    }
+]
