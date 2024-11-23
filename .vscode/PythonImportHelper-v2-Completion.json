@@ -1,5 +1,14 @@
 [
     {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
         "label": "ttk",
         "importPath": "tkinter",
         "description": "tkinter",
@@ -21,7 +30,7 @@
         "kind": 2,
         "importPath": "calculator",
         "description": "calculator",
-        "peekOfCode": "def button_click(value):\n    current=input_field.get()\n    input_field.delete(0,tk.END)\n    input_field.insert(0,current+value)\ndef clear_field():\n    input_field.delete(0,tk.END)\ndef calculate_result():\n    try:\n        result=eval(input_field.get())\n        input_field.delete(0,tk.END)",
+        "peekOfCode": "def button_click(value):\n    current = input_field.get()\n    if value == \"C\":\n        input_field.delete(0, tk.END)\n    elif value == \"=\":\n        try:\n            result = eval(current)\n            input_field.delete(0, tk.END)\n            input_field.insert(0, str(result))\n        except:",
         "detail": "calculator",
         "documentation": {}
     },
@@ -30,7 +39,7 @@
         "kind": 2,
         "importPath": "calculator",
         "description": "calculator",
-        "peekOfCode": "def clear_field():\n    input_field.delete(0,tk.END)\ndef calculate_result():\n    try:\n        result=eval(input_field.get())\n        input_field.delete(0,tk.END)\n        input_filed.insert(0,str(result))\n    except:\n        input_field.delete(0,tk.END)\n        input_field.insert(0,\"Error\")",
+        "peekOfCode": "def clear_field():\n    input_field.delete(0, tk.END)\ndef calculate_result():\n    try:\n        result = eval(input_field.get())  # Evaluate the mathematical expression\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")",
         "detail": "calculator",
         "documentation": {}
     },
@@ -39,7 +48,7 @@
         "kind": 2,
         "importPath": "calculator",
         "description": "calculator",
-        "peekOfCode": "def calculate_result():\n    try:\n        result=eval(input_field.get())\n        input_field.delete(0,tk.END)\n        input_filed.insert(0,str(result))\n    except:\n        input_field.delete(0,tk.END)\n        input_field.insert(0,\"Error\")\ndef calculate_square_root():\n    try:",
+        "peekOfCode": "def calculate_result():\n    try:\n        result = eval(input_field.get())  # Evaluate the mathematical expression\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_square_root():\n    try:",
         "detail": "calculator",
         "documentation": {}
     },
@@ -48,7 +57,7 @@
         "kind": 2,
         "importPath": "calculator",
         "description": "calculator",
-        "peekOfCode": "def calculate_square_root():\n    try:\n        result=math.sqrt(float(input_field.get()))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_log_base_10():\n    try:",
+        "peekOfCode": "def calculate_square_root():\n    try:\n        result = math.sqrt(float(input_field.get()))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_log_base_10():\n    try:",
         "detail": "calculator",
         "documentation": {}
     },
@@ -84,7 +93,151 @@
         "kind": 2,
         "importPath": "calculator",
         "description": "calculator",
-        "peekOfCode": "def calculate_tangent():\n    try:\n        result = math.tan(math.radians(float(input_field.get())))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\n        #create the main window\nroot=tk.TK()",
+        "peekOfCode": "def calculate_tangent():\n    try:\n        result = math.tan(math.radians(float(input_field.get())))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(result))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_pi():\n    input_field.delete(0, tk.END)",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_pi",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_pi():\n    input_field.delete(0, tk.END)\n    input_field.insert(0, str(math.pi))\ndef calculate_e():\n    input_field.delete(0, tk.END)\n    input_field.insert(0, str(math.e))\ndef calculate_inverse():\n    try:\n        value = 1 / float(input_field.get())\n        input_field.delete(0, tk.END)",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_e",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_e():\n    input_field.delete(0, tk.END)\n    input_field.insert(0, str(math.e))\ndef calculate_inverse():\n    try:\n        value = 1 / float(input_field.get())\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(value))\n    except:\n        input_field.delete(0, tk.END)",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_inverse",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_inverse():\n    try:\n        value = 1 / float(input_field.get())\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(value))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_abs():\n    try:",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_abs",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_abs():\n    try:\n        value = abs(float(input_field.get()))\n        input_field.delete(0, tk.END)\n        input_field.insert(0, str(value))\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef calculate_exponent():\n    try:",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_exponent",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def calculate_exponent():\n    try:\n        base = float(input_field.get())\n        input_field.delete(0, tk.END)\n        input_field.insert(0, f\"{base}^\")\n    except:\n        input_field.delete(0, tk.END)\n        input_field.insert(0, \"Error\")\ndef backspace():\n    current = input_field.get()",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "backspace",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def backspace():\n    current = input_field.get()\n    input_field.delete(len(current) - 1, tk.END)\ndef toggle_theme():\n    current_theme = style.theme_use()\n    if current_theme == \"clam\":\n        style.theme_use(\"alt\")\n    else:\n        style.theme_use(\"clam\")\n# Create the main window",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "toggle_theme",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def toggle_theme():\n    current_theme = style.theme_use()\n    if current_theme == \"clam\":\n        style.theme_use(\"alt\")\n    else:\n        style.theme_use(\"clam\")\n# Create the main window\nroot = tk.Tk()\nroot.title(\"Scientific Calculator\")\nroot.geometry(\"400x600\")",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "on_enter",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def on_enter(event):\n    event.widget.configure(relief=\"sunken\", background=\"#5c8aff\")\ndef on_leave(event):\n    event.widget.configure(relief=\"raised\", background=\"SystemButtonFace\")\n# Add buttons to the grid\nfor i, label in enumerate(buttons):\n    action = button_actions.get(label, lambda: button_click(label))  # Default to button click if no specific action\n    btn = tk.Button(frame, text=label, width=5, height=2, command=action)\n    btn.grid(row=i // 5, column=i % 5, padx=5, pady=5)\n    btn.bind(\"<Enter>\", on_enter)",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "on_leave",
+        "kind": 2,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "def on_leave(event):\n    event.widget.configure(relief=\"raised\", background=\"SystemButtonFace\")\n# Add buttons to the grid\nfor i, label in enumerate(buttons):\n    action = button_actions.get(label, lambda: button_click(label))  # Default to button click if no specific action\n    btn = tk.Button(frame, text=label, width=5, height=2, command=action)\n    btn.grid(row=i // 5, column=i % 5, padx=5, pady=5)\n    btn.bind(\"<Enter>\", on_enter)\n    btn.bind(\"<Leave>\", on_leave)\n# Theme toggle button",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 5,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "root = tk.Tk()\nroot.title(\"Scientific Calculator\")\nroot.geometry(\"400x600\")\nroot.resizable(True, True)\n# Define the styling\nstyle = ttk.Style(root)\nstyle.theme_use(\"clam\")\nstyle.configure(\"TButton\", font=(\"Arial\", 14), padding=5, relief=\"raised\")\nstyle.configure(\"TEntry\", font=(\"Arial\", 16))\nstyle.configure(\"TFrame\", background=\"#2e3b4e\")  # Frame background color",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "style",
+        "kind": 5,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "style = ttk.Style(root)\nstyle.theme_use(\"clam\")\nstyle.configure(\"TButton\", font=(\"Arial\", 14), padding=5, relief=\"raised\")\nstyle.configure(\"TEntry\", font=(\"Arial\", 16))\nstyle.configure(\"TFrame\", background=\"#2e3b4e\")  # Frame background color\n# Input field\ninput_field = ttk.Entry(root, font=(\"Arial\", 20), justify=\"right\")\ninput_field.grid(row=0, column=0, columnspan=5, padx=10, pady=20, sticky=\"nsew\")\n# Create a frame for the buttons\nframe = tk.Frame(root)",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "input_field",
+        "kind": 5,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "input_field = ttk.Entry(root, font=(\"Arial\", 20), justify=\"right\")\ninput_field.grid(row=0, column=0, columnspan=5, padx=10, pady=20, sticky=\"nsew\")\n# Create a frame for the buttons\nframe = tk.Frame(root)\nframe.grid(row=1, column=0, columnspan=5, padx=10, pady=10)\n# Button labels\nbuttons = [\n    \"2nd\", \"π\", \"e\", \"C\", \"←\", \n    \"x²\", \"1/x\", \"|x|\", \"EXP\", \"mod\", \n    \"√x\", \"(\", \")\", \"n!\", \"/\", ",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "frame",
+        "kind": 5,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "frame = tk.Frame(root)\nframe.grid(row=1, column=0, columnspan=5, padx=10, pady=10)\n# Button labels\nbuttons = [\n    \"2nd\", \"π\", \"e\", \"C\", \"←\", \n    \"x²\", \"1/x\", \"|x|\", \"EXP\", \"mod\", \n    \"√x\", \"(\", \")\", \"n!\", \"/\", \n    \"xʸ\", \"7\", \"8\", \"9\", \"x\", \n    \"10ˣ\", \"4\", \"5\", \"6\", \"-\", \n    \"log\", \"1\", \"2\", \"3\", \"+\", ",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "buttons",
+        "kind": 5,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "buttons = [\n    \"2nd\", \"π\", \"e\", \"C\", \"←\", \n    \"x²\", \"1/x\", \"|x|\", \"EXP\", \"mod\", \n    \"√x\", \"(\", \")\", \"n!\", \"/\", \n    \"xʸ\", \"7\", \"8\", \"9\", \"x\", \n    \"10ˣ\", \"4\", \"5\", \"6\", \"-\", \n    \"log\", \"1\", \"2\", \"3\", \"+\", \n    \"ln\", \"+/-\", \"0\", \".\", \"=\"\n]\n# Button actions",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "button_actions",
+        "kind": 5,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "button_actions = {\n    \"2nd\": lambda: None,  # This could trigger a mode change, implemented as needed\n    \"π\": calculate_pi,\n    \"e\": calculate_e,\n    \"C\": clear_field,\n    \"←\": backspace,  # Backspace button\n    \"x\": lambda: button_click(\"*\"),\n    \"x²\": lambda: button_click(\"**2\"),\n    \"1/x\": calculate_inverse,\n    \"|x|\": calculate_abs,",
+        "detail": "calculator",
+        "documentation": {}
+    },
+    {
+        "label": "theme_button",
+        "kind": 5,
+        "importPath": "calculator",
+        "description": "calculator",
+        "peekOfCode": "theme_button = ttk.Button(root, text=\"Toggle Theme\", command=toggle_theme)\ntheme_button.grid(row=6, column=0, columnspan=5, sticky=\"nsew\", padx=5, pady=5)\n# Run the application\nroot.mainloop()",
         "detail": "calculator",
         "documentation": {}
     }
