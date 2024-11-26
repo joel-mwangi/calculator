@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f7fc;
+      margin: ;
+    }
+    .calculator {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .input-field {
+      width: 100%;
+      height: 50px;
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background-color: #f1f1f1;
+    }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .button {
+      font-size: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+    .button:hover {
+      background-color: #ddd;
+      transform: scale(1.05);
+    }
+    .button:active {
+      transform: scale(0.98);
+    }
+    .button.double {
+      grid-column: span 2;
+    }
+    .theme-toggle {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #5c8aff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="input-field" class="input-field" readonly>
+
+    <div class="button-grid">
+      <button class="button" onclick="buttonClick('2nd')">2nd</button>
+      <button class="button" onclick="buttonClick('π')">π</button>
+      <button class="button" onclick="buttonClick('e')">e</button>
+      <button class="button" onclick="clearField()">C</button>
+      <button class="button" onclick="backspace()">←</button>
+
+      <button class="button" onclick="buttonClick('x²')">x²</button>
+      <button class="button" onclick="buttonClick('1/x')">1/x</button>
+      <button class="button" onclick="buttonClick('|x|')">|x|</button>
+      <button class="button" onclick="buttonClick('EXP')">EXP</button>
+      <button class="button" onclick="buttonClick('mod')">mod</button>
+
+      <button class="button" onclick="buttonClick('√x')">√x</button>
+      <button class="button" onclick="buttonClick('(')">(</button>
+      <button class="button" onclick="buttonClick(')')">)</button>
+      <button class="button" onclick="buttonClick('n!')">n!</button>
+      <button class="button" onclick="buttonClick('/')">/</button>
+
+      <button class="button" onclick="buttonClick('xʸ')">xʸ</button>
+      <button class="button" onclick="buttonClick('7')">7</button>
+      <button class="button" onclick="buttonClick('8')">8</button>
+      <button class="button" onclick="buttonClick('9')">9</button>
+      <button class="button" onclick="buttonClick('*')">*</button>
+
+      <button class="button" onclick="buttonClick('10ˣ')">10ˣ</button>
+      <button class="button" onclick="buttonClick('4')">4</button>
+      <button class="button" onclick="buttonClick('5')">5</button>
+      <button class="button" onclick="buttonClick('6')">6</button>
+      <button class="button" onclick="buttonClick('-')">-</button>
+
+      <button class="button" onclick="buttonClick('log')">log</button>
+      <button class="button" onclick="buttonClick('1')">1</button>
+      <button class="button" onclick="buttonClick('2')">2</button>
+      <button class="button" onclick="buttonClick('3')">3</button>
+      <button class="button" onclick="buttonClick('+')">+</button>
+
+      <button class="button" onclick="buttonClick('ln')">ln</button>
+      <button class="button double" onclick="buttonClick('+/-')">+/-</button>
+      <button class="button" onclick="buttonClick('0')">0</button>
+      <button class="button" onclick="buttonClick('.')">.</button>
+      <button class="button double" onclick="calculateResult()">=</button>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+
+  <script>
+    let currentTheme = 'light';
+
+    function buttonClick(value) {
+      const inputField = document.getElementById('input-field');
+      let current = inputField.value;
+
+      if (value === 'C') {
+        inputField.value = '';
+      } else if (value === '=') {
+        try {
+          inputField.value = eval(current);
+        } catch {
+          inputField.value = 'Error';
+        }
+      } else if (value === 'π') {
+        inputField.value += Math.PI;
+      } else if (value === 'e') {
+        inputField.value += Math.E;
+      } else if (value === '√x') {
+        try {
+          inputField.value = Math.sqrt(parseFloat(current));
+        } catch {
+          inputField.value = 'Error';
+        }
+      } else if (value === 'log') {
+        try {
+          inputField.value = Math.log10(parseFloat(current));
+        } catch {
+          inputField.value = 'Error';
+        }
+      } else if (value === 'ln') {
+        try {
+          inputField.value = Math.log(parseFloat(current));
+        } catch {
+          inputField.value = 'Error';
+        }
+      } else if (value === 'x²') {
+        inputField.value = Math.pow(parseFloat(current), 2);
+      } else if (value === '1/x') {
+        try {
+          inputField.value = 1 / parseFloat(current);
+        } catch {
+          inputField.value = 'Error';
+        }
+      } else {
+        inputField.value += value;
+      }
+    }
+
+    function clearField() {
+      document.getElementById('input-field').value = '';
+    }
+
+    function backspace() {
+      let current = document.getElementById('input-field').value;
+      document.getElementById('input-field').value = current.slice(0, -1);
+    }
+
+    function calculateResult() {
+      const inputField = document.getElementById('input-field');
+      try {
+        inputField.value = eval(inputField.value);
+      } catch {
+        inputField.value = 'Error';
+      }
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      if (currentTheme === 'light') {
+        body.style.backgroundColor = '#2e3b4e';
+        body.style.color = '#fff';
+        currentTheme = 'dark';
+      } else {
+        body.style.backgroundColor = '#f4f7fc';
+        body.style.color = '#000';
+        currentTheme = 'light';
+      }
+    }
+  </script>
+
+</body>
+</html>
